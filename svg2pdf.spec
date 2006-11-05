@@ -13,6 +13,8 @@ BuildRequires:	pkgconfig
 Requires:	libsvg-cairo >= 0.1.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define filterout_ld -Wl,--as-needed --as-needed
+
 %description
 Utility to convert an SVG file to a PDF file (using cairo).
 
