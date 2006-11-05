@@ -7,13 +7,14 @@ License:	BSD-like
 Group:		Applications/Graphics
 Source0:	http://cairographics.org/snapshots/%{name}-%{version}.tar.gz
 # Source0-md5:	0059ba059ff89931cf37720fcd102d8f
+Patch0:		%{name}-fix-as_needed.patch
 URL:		http://cairographics.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libsvg-cairo-devel >= 0.1.6
 BuildRequires:	pkgconfig
 Requires:	libsvg-cairo >= 0.1.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define filterout_ld -Wl,--as-needed --as-needed
 
 %description
 Utility to convert an SVG file to a PDF file (using cairo).
@@ -23,8 +24,13 @@ Narzêdzie do konwersji plików SVG do PDF przy u¿yciu cairo.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
