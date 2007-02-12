@@ -1,5 +1,5 @@
 Summary:	svg2pdf - convert an SVG file to a PDF file (using cairo)
-Summary(pl.UTF-8):   svg2pdf - konwersja plików SVG do PDF przy użyciu cairo
+Summary(pl.UTF-8):	svg2pdf - konwersja plików SVG do PDF przy użyciu cairo
 Name:		svg2pdf
 Version:	0.1.3
 Release:	1
